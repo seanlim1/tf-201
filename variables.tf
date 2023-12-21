@@ -1,29 +1,29 @@
 variable "name_prefix" {
   type = string
-  # default = "" # to change
+  default = "slimo" # to change
 }
 
 variable "environment" {
   type    = string
-  # default = ""
+  default = "development"
 }
 
 variable "vpc_id" {
   type    = string
-  # default = ""
+  default = "vpc-0582d885a3bc6c51b"
 }
 
 variable "public_subnet_id" {
   type    = string
-  # default = ""
+  default = "subnet-0e89cf792598a2ba4"
 }
 
 variable "ssh_key_name" {
   type    = string
-  # default = ""
+  default = "slim-ssh"
 }
 
-variable "instance_count" {
-  type    = number
-  # default = ""
+variable "enable_webapp" {
+  type = bool
+  default = true
 }

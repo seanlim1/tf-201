@@ -1,12 +1,12 @@
-resource "aws_security_group" "allow_ssh" {
-  name        = "${var.name_prefix}-allow-ssh"
-  description = "Allow SSH inbound traffic"
+resource "aws_security_group" "allow_http" {
+  name        = "${var.name_prefix}-allow-http"
+  description = "Allow HTTP inbound traffic"
   vpc_id      = var.vpc_id
 
   ingress {
-    description = "SSH from VPC"
-    from_port   = 22
-    to_port     = 22
+    description = "HTTP from Public"
+    from_port   = 80
+    to_port     = 80
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
@@ -20,7 +20,7 @@ resource "aws_security_group" "allow_ssh" {
   }
 
   tags = {
-    Name        = "${var.name_prefix}-allow-ssh"
+    Name        = "${var.name_prefix}-allow-http"
     Environment = var.environment
   }
 }
