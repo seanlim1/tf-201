@@ -12,7 +12,7 @@ resource "aws_security_group" "allow_ssh" {
   }
 
   tags = {
-    Name = "${var.name_prefix}-allow-ssh"
+    Name        = "${var.name_prefix}-allow-ssh"
     Environment = var.environment
   }
 }
