@@ -18,14 +18,14 @@ data "aws_ami" "amazon_linux" {
   }
 }
 
-## Additional Example: Data Block
-# data "aws_subnets" "public" {
-#   filter {
-#     name   = "vpc-id"
-#     values = ["vpc-0582d885a3bc6c51b"]
-#   }
-#   filter {
-#     name   = "tag:Name"
-#     values = ["*-db-*"] # insert values here
-#   }
-# }
+## Given VPC ID, one can easily retrieve the subnets
+data "aws_subnets" "public" {
+  filter {
+    name   = "vpc-id"
+    values = [var.vpc_id]
+  }
+  filter {
+    name   = "tag:Name"
+    values = ["*-public-*"]
+  }
+}

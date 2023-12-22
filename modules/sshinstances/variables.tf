@@ -1,29 +1,27 @@
 variable "name_prefix" {
   type = string
-  # default = "" # to change
 }
 
 variable "environment" {
-  type    = string
-  # default = ""
+  type = string
 }
 
 variable "vpc_id" {
-  type    = string
-  # default = ""
+  type = string
 }
 
 variable "public_subnet_id" {
-  type    = string
-  # default = ""
+  type = string
 }
 
 variable "ssh_key_name" {
-  type    = string
-  # default = ""
+  type = string
 }
 
-variable "instance_count" {
-  type    = number
-  # default = ""
+variable "ssh_instance_count" {
+  type = number
+}
+
+variable "ssh_instance_ami_id" {
+  type = string
 }

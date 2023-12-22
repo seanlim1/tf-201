@@ -4,14 +4,16 @@ resource "aws_security_group" "allow_ssh" {
   vpc_id      = var.vpc_id
 
   ingress {
-    description = "SSH from VPC"
+    description = "SSH from anywhere"
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
 
+  ## Critic: Too exposed. Can this be scoped down to our internal private subnets?
   egress {
+    description      = "All traffic to anywhere"
     from_port        = 0
     to_port          = 0
     protocol         = "-1"

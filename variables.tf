@@ -1,6 +1,6 @@
 variable "name_prefix" {
-  type = string
-  default = "slimo" # to change
+  type    = string
+  default = "slim" # to change
 }
 
 variable "environment" {
@@ -13,17 +13,12 @@ variable "vpc_id" {
   default = "vpc-0582d885a3bc6c51b"
 }
 
-variable "public_subnet_id" {
-  type    = string
-  default = "subnet-0e89cf792598a2ba4"
-}
-
 variable "ssh_key_name" {
   type    = string
   default = "slim-ssh"
 }
 
 variable "enable_webapp" {
-  type = bool
+  type    = bool
   default = true
 }
